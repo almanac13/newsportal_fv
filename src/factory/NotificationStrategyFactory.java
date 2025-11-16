@@ -1,5 +1,6 @@
 package factory;
 
+import adapter.OldNotificationAdapter;
 import strategy.EmailStrategy;
 import strategy.NotificationStrategy;
 import strategy.PushStrategy;
@@ -13,6 +14,10 @@ public class NotificationStrategyFactory {
             return new SmsStrategy();
         }else if (strategyType.equalsIgnoreCase("PUSH")){
             return new PushStrategy();
+        }else if (strategyType.equalsIgnoreCase("FAX")){
+            return new OldNotificationAdapter("fax");
+        }else if (strategyType.equalsIgnoreCase("PAPER")){
+            return new OldNotificationAdapter("paper");
         }
         else
             return new EmailStrategy();

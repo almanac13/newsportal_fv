@@ -1,6 +1,7 @@
 package agency;
 
 import model.Article;
+import model.ArticleBuilder;
 import observer.Observer;
 import observer.Subject;
 
@@ -49,14 +50,44 @@ public class NewsAgency implements Subject {
         notifyObservers();
     }
 
-    public List<Article> getArticleHistory() {
+    public List<Article> getAllArticle() {
         return new ArrayList<>(articleHistory);
     }
     private void loadSampleArticles() {
-        articleHistory.add(new Article("Java Basics", "Introduction to Java", "Technology", "High"));
-        articleHistory.add(new Article("Stock Market Update", "Market rises 2%", "Finance", "Medium"));
-        articleHistory.add(new Article("World Cup Final", "Argentina wins", "Sports", "High"));
-        articleHistory.add(new Article("AI Breakthrough", "New AI model released", "Technology", "High"));
-        articleHistory.add(new Article("Bitcoin News", "Crypto market analysis", "Finance", "Low"));
+        articleHistory.add(new ArticleBuilder()
+                .setTitle("Java Basics")
+                .setContent("Introduction to Java")
+                .setCategory("Technology")
+                .setPriority("High")
+                .build());
+
+        articleHistory.add(new ArticleBuilder()
+                .setTitle("Stock Market Update")
+                .setContent("Market rises 2%")
+                .setCategory("Finance")
+                .setPriority("Medium")
+                .build());
+
+        articleHistory.add(new ArticleBuilder()
+                .setTitle("World Cup Final")
+                .setContent("Argentina wins")
+                .setCategory("Sports")
+                .setPriority("High")
+                .build());
+
+        articleHistory.add(new ArticleBuilder()
+                .setTitle("AI Breakthrough")
+                .setContent("New AI model released")
+                .setCategory("Technology")
+                .setPriority("High")
+                .build());
+
+        articleHistory.add(new ArticleBuilder()
+                .setTitle("Bitcoin News")
+                .setContent("Crypto market analysis")
+                .setCategory("Finance")
+                .setPriority("Low")
+                .build());
     }
+
 }

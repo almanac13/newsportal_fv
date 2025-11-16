@@ -9,7 +9,7 @@ public class Article {
     private String priority;
     private LocalDateTime timstamp;
 
-    public Article(String title, String content, String category, String priority){
+    Article(String title, String content, String category, String priority){
         this.title = title;
         this.content = content;
         this.category = category;

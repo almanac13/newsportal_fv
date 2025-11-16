@@ -93,4 +93,10 @@ public class Subscriber implements Observer {
             System.out.println(name +" is unsubscribed from " + category);
         }else System.out.println(name +" is not subscribed to " + category);
     }
+
+    public void setCategories(List<String> categories) {
+        this.subscribedCategories = new ArrayList<>(categories);
+        System.out.println(name + " categories set to: " + categories);
+    }
+
 }
