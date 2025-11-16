@@ -4,6 +4,7 @@ import model.Article;
 import model.ArticleBuilder;
 import observer.Observer;
 import observer.Subject;
+import visitor.ArticleVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -90,4 +91,11 @@ public class NewsAgency implements Subject {
                 .build());
     }
 
+    public void processWithVisitor(ArticleVisitor visitor) {
+        System.out.println("Processing " + articleHistory.size() + " articles.");
+        for (Article article : articleHistory) {
+            article.accept(visitor);
+        }
+        System.out.println("Processing complete!");
+    }
 }

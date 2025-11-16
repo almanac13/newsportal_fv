@@ -1,5 +1,7 @@
 package model;
 
+import visitor.ArticleVisitor;
+
 import java.time.LocalDateTime;
 
 public class Article {
@@ -50,5 +52,9 @@ public class Article {
     @Override
     public String toString(){
         return title + " - " + category + " (" + priority + ")" + " - " + timstamp.toLocalTime();
+    }
+
+    public void accept(ArticleVisitor visitor){
+        visitor.visit(this);
     }
 }
