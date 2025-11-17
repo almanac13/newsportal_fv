@@ -12,11 +12,11 @@ public class CounterVisitor implements ArticleVisitor {
     @Override
     public void visit(Article article) {
         String priority = article.getPriority();
-        if (priority.equals("high")) {
+        if (priority.equalsIgnoreCase("high")) {
             highConternCount++;
-        }else if (priority.equals("medium")) {
+        }else if (priority.equalsIgnoreCase("medium")) {
             mediumContentCount++;
-        }else if (priority.equals("low")) {
+        }else if (priority.equalsIgnoreCase("low")) {
             lowConternCount++;
         }
 

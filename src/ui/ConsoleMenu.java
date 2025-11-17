@@ -75,9 +75,10 @@ public class ConsoleMenu {
                 System.out.print(prompt);
                 String input = scanner.nextLine();
                 return Integer.parseInt(input);
-            } catch (NumberFormatException e) {
-                System.out.println("Invalid input. Please enter a number.");
+            } catch (NumberFormatException e){
+                System.out.println("Invalid number. Please try again.");
             }
+
         }
     }
 

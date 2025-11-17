@@ -9,7 +9,7 @@ public class SimplePrintVisitor implements ArticleVisitor {
     @Override
     public void visit(Article article) {
         count++;
-        System.out.println("Article " + count + ": " + article.getTitle());
+        System.out.println("Article " + count + ": " + article.getTitle() + " Priority: " + article.getPriority());
 
     }
 

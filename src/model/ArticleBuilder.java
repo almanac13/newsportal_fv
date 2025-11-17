@@ -19,7 +19,7 @@ public class ArticleBuilder {
         return this;
     }
 
-    public ArticleBuilder setCategory(String category) {  // Changed parameter type
+    public ArticleBuilder setCategory(String category) {
         this.category = category;
         return this;
     }
